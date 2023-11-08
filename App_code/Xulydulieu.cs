@@ -14,7 +14,7 @@ namespace Quan_Ly_Dien_Thoai.App_code
         public Xulydulieu()
         {
             con = new SqlConnection();
-            con.ConnectionString = @"Data Source=PhucDo;Initial Catalog=QuanLyDienThoai;Integrated Security=True";
+            con.ConnectionString = @"Data Source=localhost;Initial Catalog=QuanLyDienThoai;Integrated Security=True";
         }
         private void MoKetNoi()
         {
