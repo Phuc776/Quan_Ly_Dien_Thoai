@@ -47,7 +47,7 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void pnTaiKhoan_Click(object sender, EventArgs e)
         {
-            Quanly_TaiKhoan nv = new Quanly_TaiKhoan();
+            Quanly_NhaCungCap nv = new Quanly_NhaCungCap();
             nv.Show();
         }
 

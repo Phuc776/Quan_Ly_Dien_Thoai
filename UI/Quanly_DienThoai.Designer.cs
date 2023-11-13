@@ -62,6 +62,7 @@
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSanPham.Size = new System.Drawing.Size(857, 246);
             this.dgvSanPham.TabIndex = 49;
+            this.dgvSanPham.SelectionChanged += new System.EventHandler(this.dgvSanPham_SelectionChanged);
             // 
             // btnXmlPrinter
             // 
@@ -113,7 +114,7 @@
             this.cbDanhMuc.FormattingEnabled = true;
             this.cbDanhMuc.Location = new System.Drawing.Point(197, 189);
             this.cbDanhMuc.Name = "cbDanhMuc";
-            this.cbDanhMuc.Size = new System.Drawing.Size(121, 24);
+            this.cbDanhMuc.Size = new System.Drawing.Size(153, 24);
             this.cbDanhMuc.TabIndex = 7;
             // 
             // txtSoLuong

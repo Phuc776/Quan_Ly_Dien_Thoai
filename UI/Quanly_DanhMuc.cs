@@ -13,20 +13,21 @@ namespace Quan_Ly_Dien_Thoai.UI
 {
     public partial class Quanly_DanhMuc : Form
     {
+        Xulydulieu xuly = new Xulydulieu();
         public Quanly_DanhMuc()
         {
             InitializeComponent();
         }
         private void Quanly_DanhMuc_Load(object sender, EventArgs e)
         {
-            Xulydulieu xuly = new Xulydulieu();
+            
             String sql = "select * from DANHMUC";
             this.dgvDanhMuc.DataSource = xuly.getTable(sql);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            Xulydulieu xuly = new Xulydulieu();
+           
             String sql = "SELECT * FROM DANHMUC";
             List<string> conditions = new List<string>();
 
@@ -52,7 +53,7 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Xulydulieu xuly = new Xulydulieu();
+            
             String maDM = txtMaDanhMuc.Text.Trim();
             String tenDM = txtTenDanhMuc.Text.Trim();
 
@@ -63,7 +64,7 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            Xulydulieu xuly = new Xulydulieu();
+            
             String maDM = txtMaDanhMuc.Text.Trim();
             String tenDM = txtTenDanhMuc.Text.Trim();
 
@@ -75,7 +76,7 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            Xulydulieu xuly = new Xulydulieu();
+            
             String maDM = txtMaDanhMuc.Text.Trim();
             String tenDM = txtTenDanhMuc.Text.Trim();
 
@@ -91,6 +92,19 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void btnViewWeb_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvDanhMuc_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvRowSelected();
+        }
+
+        private void dgvRowSelected()
+        {
+            int d = dgvDanhMuc.CurrentRow.Index;
+            txtMaDanhMuc.Text = dgvDanhMuc.Rows[d].Cells[0].Value.ToString();
+            txtTenDanhMuc.Text = dgvDanhMuc.Rows[d].Cells[1].Value.ToString();
 
         }
     }

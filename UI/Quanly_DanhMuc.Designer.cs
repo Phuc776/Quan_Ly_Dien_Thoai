@@ -30,6 +30,8 @@
         {
             this.dgvDanhMuc = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenDanhMuc = new System.Windows.Forms.TextBox();
+            this.txtMaDanhMuc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +41,6 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnViewWeb = new System.Windows.Forms.Button();
             this.btnXmlPrinter = new System.Windows.Forms.Button();
-            this.txtMaDanhMuc = new System.Windows.Forms.TextBox();
-            this.txtTenDanhMuc = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,11 +58,11 @@
             this.dgvDanhMuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhMuc.Size = new System.Drawing.Size(546, 205);
             this.dgvDanhMuc.TabIndex = 15;
+            this.dgvDanhMuc.SelectionChanged += new System.EventHandler(this.dgvDanhMuc_SelectionChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PowderBlue;
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenDanhMuc);
             this.groupBox1.Controls.Add(this.txtMaDanhMuc);
             this.groupBox1.Controls.Add(this.label3);
@@ -74,6 +73,20 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
+            // 
+            // txtTenDanhMuc
+            // 
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(155, 102);
+            this.txtTenDanhMuc.Name = "txtTenDanhMuc";
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(331, 22);
+            this.txtTenDanhMuc.TabIndex = 3;
+            // 
+            // txtMaDanhMuc
+            // 
+            this.txtMaDanhMuc.Location = new System.Drawing.Point(155, 63);
+            this.txtMaDanhMuc.Name = "txtMaDanhMuc";
+            this.txtMaDanhMuc.Size = new System.Drawing.Size(331, 22);
+            this.txtMaDanhMuc.TabIndex = 2;
             // 
             // label3
             // 
@@ -184,29 +197,6 @@
             this.btnXmlPrinter.UseVisualStyleBackColor = false;
             this.btnXmlPrinter.Click += new System.EventHandler(this.btnXmlPrinter_Click);
             // 
-            // txtMaDanhMuc
-            // 
-            this.txtMaDanhMuc.Location = new System.Drawing.Point(155, 63);
-            this.txtMaDanhMuc.Name = "txtMaDanhMuc";
-            this.txtMaDanhMuc.Size = new System.Drawing.Size(331, 22);
-            this.txtMaDanhMuc.TabIndex = 2;
-            // 
-            // txtTenDanhMuc
-            // 
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(155, 102);
-            this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(331, 22);
-            this.txtTenDanhMuc.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
-            // 
             // Quanly_DanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -247,6 +237,5 @@
         private System.Windows.Forms.Button btnXmlPrinter;
         private System.Windows.Forms.TextBox txtTenDanhMuc;
         private System.Windows.Forms.TextBox txtMaDanhMuc;
-        private System.Windows.Forms.Label label4;
     }
 }
