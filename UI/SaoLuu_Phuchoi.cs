@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Dien_Thoai.UI
 {
-    public partial class Quanly_PhieuNhap : Form
+    public partial class SaoLuu_Phuchoi : Form
     {
-        public Quanly_PhieuNhap()
+        public SaoLuu_Phuchoi()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
@@ -43,18 +43,19 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             drag = false;
         }
-
-     
-
         private void btnClosed_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void SaoLuu_Phuchoi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

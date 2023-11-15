@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quan_Ly_Dien_Thoai.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Dien_Thoai.UI
 {
-    public partial class Quanly_PhieuNhap : Form
+    public partial class Login : Form
     {
-        public Quanly_PhieuNhap()
+        public Login()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
@@ -43,18 +44,40 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             drag = false;
         }
-
-     
-
-        private void btnClosed_Click(object sender, EventArgs e)
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            QuanLy frmquanLy = new QuanLy();
+            frmquanLy.Show();
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTittle_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        
+
+        private void btnClosed_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
+
+        // Start
+
+
+
     }
 }

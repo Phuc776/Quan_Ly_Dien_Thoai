@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Dien_Thoai.UI
 {
-    public partial class Quanly_PhieuNhap : Form
+    public partial class QuantriAdmin : Form
     {
-        public Quanly_PhieuNhap()
+        public QuantriAdmin()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Normal;
@@ -43,14 +43,15 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             drag = false;
         }
+        private void QuantriAdmin_Load(object sender, EventArgs e)
+        {
 
-     
+        }
 
         private void btnClosed_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();           
         }
-
 
         private void button3_Click(object sender, EventArgs e)
         {
