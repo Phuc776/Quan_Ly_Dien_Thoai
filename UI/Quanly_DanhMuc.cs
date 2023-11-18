@@ -130,5 +130,18 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dgvDanhMuc_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvRowSelected();
+        }
+
+        private void dgvRowSelected()
+        {
+            int d = dgvDanhMuc.CurrentRow.Index;
+            txtMaDanhMuc.Text = dgvDanhMuc.Rows[d].Cells[0].Value.ToString();
+            txtTenDanhMuc.Text = dgvDanhMuc.Rows[d].Cells[1].Value.ToString();
+
+        }
     }
 }

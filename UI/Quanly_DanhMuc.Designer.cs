@@ -64,6 +64,7 @@
             this.dgvDanhMuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhMuc.Size = new System.Drawing.Size(546, 151);
             this.dgvDanhMuc.TabIndex = 15;
+            this.dgvDanhMuc.SelectionChanged += new System.EventHandler(this.dgvDanhMuc_SelectionChanged);
             // 
             // groupBox1
             // 
