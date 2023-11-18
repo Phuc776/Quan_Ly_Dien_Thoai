@@ -108,7 +108,7 @@
             this.cbDanhMuc.FormattingEnabled = true;
             this.cbDanhMuc.Location = new System.Drawing.Point(287, 249);
             this.cbDanhMuc.Name = "cbDanhMuc";
-            this.cbDanhMuc.Size = new System.Drawing.Size(121, 35);
+            this.cbDanhMuc.Size = new System.Drawing.Size(315, 35);
             this.cbDanhMuc.TabIndex = 7;
             // 
             // txtSoLuong

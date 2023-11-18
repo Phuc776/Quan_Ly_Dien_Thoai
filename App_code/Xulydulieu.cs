@@ -5,12 +5,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Windows.Forms;
+using System.IO;
 
 namespace Quan_Ly_Dien_Thoai.App_code
 {
     internal class Xulydulieu
     {
         SqlConnection con;
+        SqlDataAdapter adapter;
         public Xulydulieu()
         {
             con = new SqlConnection();
@@ -82,7 +86,7 @@ namespace Quan_Ly_Dien_Thoai.App_code
         /// </summary>
         /// <param name="SQL">SQL:insert, update, Delete</param>
         /// <returns>K(<>0, =0) trong đó <>0 thành công và =0 lỗi khi thực thi </returns>
-        public int ExeCute(string SQL)
+        public int Execute(string SQL)
         {
             int k = 0;
             try
@@ -100,26 +104,91 @@ namespace Quan_Ly_Dien_Thoai.App_code
             }
             return k;
         }
-        public int ExeCute(String nameprocedurce, SqlParameter[] pr)
+
+        public void loadXML(string[] TableNames)
         {
-            int k = 0;
-            try
+            this.MoKetNoi();
+            foreach (string TableName in TableNames)
             {
-                this.MoKetNoi();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = nameprocedurce;
-                if (pr != null)
-                    cmd.Parameters.AddRange(pr);
-                k = (int)cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM {TableName}", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    XmlWriterSettings xmlSettings = new XmlWriterSettings
+                    {
+                        Indent = true
+                    };
+                    XmlWriter xmlWriter = XmlWriter.Create($"{TableName}.xml", xmlSettings);
+
+                    xmlWriter.WriteStartDocument();
+                    xmlWriter.WriteStartElement(TableName);
+
+                    while (reader.Read())
+                    {
+                        xmlWriter.WriteStartElement("Row");
+
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            xmlWriter.WriteStartElement(reader.GetName(i));
+                            xmlWriter.WriteValue(reader[i].ToString());
+                            xmlWriter.WriteEndElement();
+                        }
+
+                        xmlWriter.WriteEndElement();
+                    }
+
+                    xmlWriter.WriteEndElement();
+                    xmlWriter.WriteEndDocument();
+                    xmlWriter.Close();
+                }
+                reader.Close();
+                cmd.Dispose();
             }
-            catch (Exception ex) { }
-            finally
-            {
-                this.DongKetNoi();
-            }
-            return k;
+            this.DongKetNoi();
         }
+        public DataTable getXMLDataSet(string filename)
+        {
+            DataTable dt = new DataTable();
+            string FilePath = Application.StartupPath + "\\" + filename;
+            if (File.Exists(FilePath))
+            {
+
+                DataSet ds = new DataSet();
+                FileStream fsReadXML = new FileStream(FilePath, System.IO.FileMode.Open);
+                ds.ReadXml(fsReadXML);
+                DataView dv = new DataView(ds.Tables[0]);
+                dt = dv.Table;
+                fsReadXML.Close();
+            }
+            else
+            {
+                MessageBox.Show("File XML '" + filename + "' không tồn tại");
+            }
+
+            return dt;
+        }
+
+        public void loadTables(String[] tableNames) {
+            foreach (String tableName in tableNames)
+            {
+                String path = @"" + tableName + ".xml";
+                DataTable dataTable = getXMLDataSet(path);
+
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    string sql = "insert into " + tableName + " values(";
+                    for (int j = 0; j < dataTable.Columns.Count - 1; j++)
+                    {
+                        sql += "N'" + dataTable.Rows[i][j].ToString().Trim() + "',";
+                    }
+                    sql += "N'" + dataTable.Rows[i][dataTable.Columns.Count - 1].ToString().Trim() + "'";
+                    sql += ")";
+                    Execute(sql);
+                }
+            }
+        }
+
+
     }
 }
