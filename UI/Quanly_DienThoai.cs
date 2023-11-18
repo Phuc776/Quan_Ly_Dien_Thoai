@@ -144,5 +144,18 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dgvSanPham_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvRowSelected();
+        }
+
+        private void dgvRowSelected()
+        {
+            int d = dgvSanPham.CurrentRow.Index;
+            txtMaDienThoai.Text = dgvSanPham.Rows[d].Cells[0].Value.ToString();
+            txtTenDienThoai.Text = dgvSanPham.Rows[d].Cells[1].Value.ToString();
+            txtSoLuong.Text = dgvSanPham.Rows[d].Cells[2].Value.ToString();
+        }
     }
 }

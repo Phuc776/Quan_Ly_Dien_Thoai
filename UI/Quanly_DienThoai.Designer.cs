@@ -68,6 +68,7 @@
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSanPham.Size = new System.Drawing.Size(672, 146);
             this.dgvSanPham.TabIndex = 49;
+            this.dgvSanPham.SelectionChanged += new System.EventHandler(this.dgvSanPham_SelectionChanged);
             // 
             // btnXmlPrinter
             // 
