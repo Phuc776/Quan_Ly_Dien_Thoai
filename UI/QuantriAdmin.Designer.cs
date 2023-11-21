@@ -33,8 +33,10 @@
             this.btnClosed = new System.Windows.Forms.Button();
             this.tbcQuanTriAdmin = new System.Windows.Forms.TabControl();
             this.tbcAdmin_Nhacungcap = new System.Windows.Forms.TabPage();
+            this.dgvNCC = new System.Windows.Forms.DataGridView();
             this.dgvLoaiDocGia = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtADTDG = new System.Windows.Forms.TextBox();
             this.btnADTLDG = new System.Windows.Forms.Button();
@@ -45,14 +47,16 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tbcAdmin_NhanVien = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdThuThuCapNhat = new System.Windows.Forms.RadioButton();
+            this.rdAdminCapNhat = new System.Windows.Forms.RadioButton();
+            this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtMatKhauNVCapNhat = new System.Windows.Forms.TextBox();
             this.txtHoTenNVCapNhat = new System.Windows.Forms.TextBox();
             this.txtTenDangNhapNVCapNhat = new System.Windows.Forms.TextBox();
             this.txtSearchPhieuMuon = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.rdAdminCapNhat = new System.Windows.Forms.RadioButton();
-            this.rdThuThuCapNhat = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
             this.btnCapNhatNhanVien = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -60,16 +64,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnXoaNV = new System.Windows.Forms.Button();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbcQuanTriAdmin.SuspendLayout();
             this.tbcAdmin_Nhacungcap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiDocGia)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tbcAdmin_NhanVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -123,6 +125,7 @@
             // tbcAdmin_Nhacungcap
             // 
             this.tbcAdmin_Nhacungcap.BackColor = System.Drawing.SystemColors.Control;
+            this.tbcAdmin_Nhacungcap.Controls.Add(this.dgvNCC);
             this.tbcAdmin_Nhacungcap.Controls.Add(this.dgvLoaiDocGia);
             this.tbcAdmin_Nhacungcap.Controls.Add(this.groupBox6);
             this.tbcAdmin_Nhacungcap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +136,18 @@
             this.tbcAdmin_Nhacungcap.Size = new System.Drawing.Size(992, 505);
             this.tbcAdmin_Nhacungcap.TabIndex = 0;
             this.tbcAdmin_Nhacungcap.Text = "Nhà cung cấp";
+            // 
+            // dgvNCC
+            // 
+            this.dgvNCC.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvNCC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNCC.Location = new System.Drawing.Point(32, 273);
+            this.dgvNCC.Name = "dgvNCC";
+            this.dgvNCC.RowHeadersWidth = 51;
+            this.dgvNCC.RowTemplate.Height = 24;
+            this.dgvNCC.Size = new System.Drawing.Size(937, 229);
+            this.dgvNCC.TabIndex = 5;
             // 
             // dgvLoaiDocGia
             // 
@@ -170,6 +185,20 @@
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Nhà cung cấp";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Green;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(64, 158);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 37);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Làm mới";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -302,6 +331,57 @@
             this.tbcAdmin_NhanVien.TabIndex = 1;
             this.tbcAdmin_NhanVien.Text = "Nhân Viên";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdThuThuCapNhat);
+            this.groupBox1.Controls.Add(this.rdAdminCapNhat);
+            this.groupBox1.Location = new System.Drawing.Point(182, 124);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(274, 106);
+            this.groupBox1.TabIndex = 61;
+            this.groupBox1.TabStop = false;
+            // 
+            // rdThuThuCapNhat
+            // 
+            this.rdThuThuCapNhat.AutoSize = true;
+            this.rdThuThuCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdThuThuCapNhat.Location = new System.Drawing.Point(17, 21);
+            this.rdThuThuCapNhat.Margin = new System.Windows.Forms.Padding(4);
+            this.rdThuThuCapNhat.Name = "rdThuThuCapNhat";
+            this.rdThuThuCapNhat.Size = new System.Drawing.Size(194, 26);
+            this.rdThuThuCapNhat.TabIndex = 55;
+            this.rdThuThuCapNhat.TabStop = true;
+            this.rdThuThuCapNhat.Text = "Nhân viên nhập hàng";
+            this.rdThuThuCapNhat.UseVisualStyleBackColor = true;
+            // 
+            // rdAdminCapNhat
+            // 
+            this.rdAdminCapNhat.AutoSize = true;
+            this.rdAdminCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdAdminCapNhat.Location = new System.Drawing.Point(17, 71);
+            this.rdAdminCapNhat.Margin = new System.Windows.Forms.Padding(4);
+            this.rdAdminCapNhat.Name = "rdAdminCapNhat";
+            this.rdAdminCapNhat.Size = new System.Drawing.Size(84, 26);
+            this.rdAdminCapNhat.TabIndex = 56;
+            this.rdAdminCapNhat.TabStop = true;
+            this.rdAdminCapNhat.Text = "Admin";
+            this.rdAdminCapNhat.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Green;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button5.Location = new System.Drawing.Point(39, 240);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(156, 39);
+            this.button5.TabIndex = 60;
+            this.button5.Text = "Làm mới";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -309,7 +389,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(478, 240);
+            this.button2.Location = new System.Drawing.Point(295, 240);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(193, 39);
@@ -364,32 +444,6 @@
             this.label21.TabIndex = 57;
             this.label21.Text = "Mật Khẩu :";
             // 
-            // rdAdminCapNhat
-            // 
-            this.rdAdminCapNhat.AutoSize = true;
-            this.rdAdminCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdAdminCapNhat.Location = new System.Drawing.Point(17, 71);
-            this.rdAdminCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.rdAdminCapNhat.Name = "rdAdminCapNhat";
-            this.rdAdminCapNhat.Size = new System.Drawing.Size(84, 26);
-            this.rdAdminCapNhat.TabIndex = 56;
-            this.rdAdminCapNhat.TabStop = true;
-            this.rdAdminCapNhat.Text = "Admin";
-            this.rdAdminCapNhat.UseVisualStyleBackColor = true;
-            // 
-            // rdThuThuCapNhat
-            // 
-            this.rdThuThuCapNhat.AutoSize = true;
-            this.rdThuThuCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdThuThuCapNhat.Location = new System.Drawing.Point(17, 21);
-            this.rdThuThuCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.rdThuThuCapNhat.Name = "rdThuThuCapNhat";
-            this.rdThuThuCapNhat.Size = new System.Drawing.Size(194, 26);
-            this.rdThuThuCapNhat.TabIndex = 55;
-            this.rdThuThuCapNhat.TabStop = true;
-            this.rdThuThuCapNhat.Text = "Nhân viên nhập hàng";
-            this.rdThuThuCapNhat.UseVisualStyleBackColor = true;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -408,7 +462,7 @@
             this.btnCapNhatNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhatNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhatNhanVien.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCapNhatNhanVien.Location = new System.Drawing.Point(294, 240);
+            this.btnCapNhatNhanVien.Location = new System.Drawing.Point(605, 240);
             this.btnCapNhatNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapNhatNhanVien.Name = "btnCapNhatNhanVien";
             this.btnCapNhatNhanVien.Size = new System.Drawing.Size(99, 39);
@@ -479,45 +533,6 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(903, 164);
             this.dgvNhanVien.TabIndex = 3;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Green;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(64, 158);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 37);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Làm mới";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Green;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(39, 240);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 39);
-            this.button5.TabIndex = 60;
-            this.button5.Text = "Làm mới";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdThuThuCapNhat);
-            this.groupBox1.Controls.Add(this.rdAdminCapNhat);
-            this.groupBox1.Location = new System.Drawing.Point(182, 124);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 106);
-            this.groupBox1.TabIndex = 61;
-            this.groupBox1.TabStop = false;
-            // 
             // QuantriAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -536,14 +551,15 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.tbcQuanTriAdmin.ResumeLayout(false);
             this.tbcAdmin_Nhacungcap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiDocGia)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tbcAdmin_NhanVien.ResumeLayout(false);
             this.tbcAdmin_NhanVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,5 +600,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dgvNCC;
     }
 }
