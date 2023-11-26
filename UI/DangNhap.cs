@@ -1,4 +1,5 @@
-﻿using Quan_Ly_Dien_Thoai.UI;
+﻿using Quan_Ly_Dien_Thoai.Controller;
+using Quan_Ly_Dien_Thoai.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Quan_Ly_Dien_Thoai.UI
 {
     public partial class Login : Form
     {
+        Xuly_DangNhap dangnhap = new Xuly_DangNhap();
         public Login()
         {
             InitializeComponent();
@@ -46,14 +48,43 @@ namespace Quan_Ly_Dien_Thoai.UI
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            QuanLy frmquanLy = new QuanLy();
-            frmquanLy.Show();
+            if (txtTenDN.Text.Equals("") || txtMK.Text.Equals("")) 
+            {
+                MessageBox.Show("Không được bỏ trống!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                txtTenDN.Focus();
+            }
+            else
+            {
+                if (dangnhap.kiemtraTTDN(txtTenDN.Text, txtMK.Text))
+                {
+                    QuanLy.quyen = dangnhap.setQuyenDangNhap(txtTenDN);
+                    QuanLy.tenDN = dangnhap.setTenDangNhap(txtTenDN);
+                    QuanLy frmquanLy = new QuanLy();
+                    frmquanLy.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtTenDN.Focus();
+                    txtMK.Text = "";
+                }
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
+            txtMK.UseSystemPasswordChar = true;
+            txtMK.KeyPress += TxtMK_KeyPress;
+        }
 
+        private void TxtMK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter) // Checks if Enter key is pressed
+            {
+                e.Handled = true; // Prevents 'ding' sound
+                btnDangNhap.PerformClick(); // Simulates the click on the login button
+            }
         }
 
         private void lbTittle_Click(object sender, EventArgs e)

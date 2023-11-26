@@ -49,12 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_code\Main.cs" />
     <Compile Include="App_code\Xulydulieu.cs" />
+    <Compile Include="App_code\XulyXML.cs" />
+    <Compile Include="Controller\Danhmuc.cs" />
+    <Compile Include="Controller\DienThoai.cs" />
+    <Compile Include="Controller\NCC.cs" />
+    <Compile Include="Controller\NhanVien.cs" />
+    <Compile Include="Controller\PhieuNhap.cs" />
+    <Compile Include="Controller\Xuly_DangNhap.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChiTiet_PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChiTiet_PhieuNhap.Designer.cs">
+      <DependentUpon>ChiTiet_PhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\DangNhap.cs">
       <SubType>Form</SubType>
@@ -76,17 +88,17 @@
     <Compile Include="UI\Quanly_DanhMuc.Designer.cs">
       <DependentUpon>Quanly_DanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Quanly_PhieuNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Quanly_PhieuNhap.Designer.cs">
-      <DependentUpon>Quanly_PhieuNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Quanly_DienThoai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Quanly_DienThoai.Designer.cs">
       <DependentUpon>Quanly_DienThoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Quanly_PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Quanly_PhieuNhap.Designer.cs">
+      <DependentUpon>Quanly_PhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QuantriAdmin.cs">
       <SubType>Form</SubType>
@@ -105,6 +117,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChiTiet_PhieuNhap.resx">
+      <DependentUpon>ChiTiet_PhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,11 +129,11 @@
     <EmbeddedResource Include="UI\Quanly_DanhMuc.resx">
       <DependentUpon>Quanly_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Quanly_PhieuNhap.resx">
-      <DependentUpon>Quanly_PhieuNhap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Quanly_DienThoai.resx">
       <DependentUpon>Quanly_DienThoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Quanly_PhieuNhap.resx">
+      <DependentUpon>Quanly_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuantriAdmin.resx">
       <DependentUpon>QuantriAdmin.cs</DependentUpon>

@@ -36,33 +36,37 @@
             this.dgvNCC = new System.Windows.Forms.DataGridView();
             this.dgvLoaiDocGia = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtADTDG = new System.Windows.Forms.TextBox();
-            this.btnADTLDG = new System.Windows.Forms.Button();
-            this.btnADCNLDG = new System.Windows.Forms.Button();
-            this.txtADSoNM = new System.Windows.Forms.TextBox();
-            this.txtADMaLoai = new System.Windows.Forms.TextBox();
+            this.btnXmlViewer_NCC = new System.Windows.Forms.Button();
+            this.btn_Tim_NCC = new System.Windows.Forms.Button();
+            this.btn_Renew_NCC = new System.Windows.Forms.Button();
+            this.btn_Xoa_NCC = new System.Windows.Forms.Button();
+            this.txtMaNCC = new System.Windows.Forms.TextBox();
+            this.btn_Sua_NCC = new System.Windows.Forms.Button();
+            this.btn_Them_NCC = new System.Windows.Forms.Button();
+            this.txtSDT_NCC = new System.Windows.Forms.TextBox();
+            this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tbcAdmin_NhanVien = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdThuThuCapNhat = new System.Windows.Forms.RadioButton();
-            this.rdAdminCapNhat = new System.Windows.Forms.RadioButton();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtMatKhauNVCapNhat = new System.Windows.Forms.TextBox();
-            this.txtHoTenNVCapNhat = new System.Windows.Forms.TextBox();
-            this.txtTenDangNhapNVCapNhat = new System.Windows.Forms.TextBox();
-            this.txtSearchPhieuMuon = new System.Windows.Forms.TextBox();
+            this.btn_ViewXML_NV = new System.Windows.Forms.Button();
+            this.btn_Tim_NV = new System.Windows.Forms.Button();
+            this.gbNhanVien = new System.Windows.Forms.GroupBox();
+            this.rdNhanVien = new System.Windows.Forms.RadioButton();
+            this.rdAdmin = new System.Windows.Forms.RadioButton();
+            this.btnRenewNhanVien = new System.Windows.Forms.Button();
+            this.btnThemNhanVIen = new System.Windows.Forms.Button();
+            this.txtMatKhauNV = new System.Windows.Forms.TextBox();
+            this.txtHoTenNV = new System.Windows.Forms.TextBox();
+            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
+            this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.btnCapNhatNhanVien = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnXoaNV = new System.Windows.Forms.Button();
+            this.btnXoaNhanVien = new System.Windows.Forms.Button();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.tbcQuanTriAdmin.SuspendLayout();
             this.tbcAdmin_Nhacungcap.SuspendLayout();
@@ -70,7 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiDocGia)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tbcAdmin_NhanVien.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +152,7 @@
             this.dgvNCC.RowTemplate.Height = 24;
             this.dgvNCC.Size = new System.Drawing.Size(937, 229);
             this.dgvNCC.TabIndex = 5;
+            this.dgvNCC.SelectionChanged += new System.EventHandler(this.dgvNCC_SelectionChanged);
             // 
             // dgvLoaiDocGia
             // 
@@ -165,13 +170,15 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.button1);
-            this.groupBox6.Controls.Add(this.txtADTDG);
-            this.groupBox6.Controls.Add(this.btnADTLDG);
-            this.groupBox6.Controls.Add(this.btnADCNLDG);
-            this.groupBox6.Controls.Add(this.txtADSoNM);
-            this.groupBox6.Controls.Add(this.txtADMaLoai);
+            this.groupBox6.Controls.Add(this.btnXmlViewer_NCC);
+            this.groupBox6.Controls.Add(this.btn_Tim_NCC);
+            this.groupBox6.Controls.Add(this.btn_Renew_NCC);
+            this.groupBox6.Controls.Add(this.btn_Xoa_NCC);
+            this.groupBox6.Controls.Add(this.txtMaNCC);
+            this.groupBox6.Controls.Add(this.btn_Sua_NCC);
+            this.groupBox6.Controls.Add(this.btn_Them_NCC);
+            this.groupBox6.Controls.Add(this.txtSDT_NCC);
+            this.groupBox6.Controls.Add(this.txtTenNCC);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Controls.Add(this.label23);
@@ -186,90 +193,126 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Nhà cung cấp";
             // 
-            // button4
+            // btnXmlViewer_NCC
             // 
-            this.button4.BackColor = System.Drawing.Color.Green;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(64, 158);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 37);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Làm mới";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnXmlViewer_NCC.BackColor = System.Drawing.Color.DarkGray;
+            this.btnXmlViewer_NCC.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXmlViewer_NCC.ForeColor = System.Drawing.Color.White;
+            this.btnXmlViewer_NCC.Location = new System.Drawing.Point(758, 98);
+            this.btnXmlViewer_NCC.Name = "btnXmlViewer_NCC";
+            this.btnXmlViewer_NCC.Size = new System.Drawing.Size(125, 37);
+            this.btnXmlViewer_NCC.TabIndex = 108;
+            this.btnXmlViewer_NCC.Text = "In File Xml";
+            this.btnXmlViewer_NCC.UseVisualStyleBackColor = false;
+            this.btnXmlViewer_NCC.Click += new System.EventHandler(this.btnXmlViewer_NCC_Click);
             // 
-            // button1
+            // btn_Tim_NCC
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(758, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 37);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Xoá";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Tim_NCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btn_Tim_NCC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Tim_NCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tim_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tim_NCC.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tim_NCC.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim_NCC.Image")));
+            this.btn_Tim_NCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Tim_NCC.Location = new System.Drawing.Point(65, 160);
+            this.btn_Tim_NCC.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Tim_NCC.Name = "btn_Tim_NCC";
+            this.btn_Tim_NCC.Size = new System.Drawing.Size(159, 35);
+            this.btn_Tim_NCC.TabIndex = 107;
+            this.btn_Tim_NCC.Text = "Tìm theo mã";
+            this.btn_Tim_NCC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Tim_NCC.UseVisualStyleBackColor = false;
+            this.btn_Tim_NCC.Click += new System.EventHandler(this.btn_Tim_NCC_Click);
             // 
-            // txtADTDG
+            // btn_Renew_NCC
             // 
-            this.txtADTDG.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtADTDG.Location = new System.Drawing.Point(188, 43);
-            this.txtADTDG.Margin = new System.Windows.Forms.Padding(4);
-            this.txtADTDG.Name = "txtADTDG";
-            this.txtADTDG.Size = new System.Drawing.Size(161, 30);
-            this.txtADTDG.TabIndex = 14;
+            this.btn_Renew_NCC.BackColor = System.Drawing.Color.Green;
+            this.btn_Renew_NCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Renew_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Renew_NCC.ForeColor = System.Drawing.Color.White;
+            this.btn_Renew_NCC.Location = new System.Drawing.Point(317, 158);
+            this.btn_Renew_NCC.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Renew_NCC.Name = "btn_Renew_NCC";
+            this.btn_Renew_NCC.Size = new System.Drawing.Size(121, 37);
+            this.btn_Renew_NCC.TabIndex = 16;
+            this.btn_Renew_NCC.Text = "Làm mới";
+            this.btn_Renew_NCC.UseVisualStyleBackColor = false;
+            this.btn_Renew_NCC.Click += new System.EventHandler(this.btn_Renew_NCC_Click);
             // 
-            // btnADTLDG
+            // btn_Xoa_NCC
             // 
-            this.btnADTLDG.BackColor = System.Drawing.Color.Teal;
-            this.btnADTLDG.FlatAppearance.BorderSize = 0;
-            this.btnADTLDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADTLDG.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnADTLDG.ForeColor = System.Drawing.Color.White;
-            this.btnADTLDG.Location = new System.Drawing.Point(535, 158);
-            this.btnADTLDG.Margin = new System.Windows.Forms.Padding(4);
-            this.btnADTLDG.Name = "btnADTLDG";
-            this.btnADTLDG.Size = new System.Drawing.Size(125, 37);
-            this.btnADTLDG.TabIndex = 13;
-            this.btnADTLDG.Text = "Thêm";
-            this.btnADTLDG.UseVisualStyleBackColor = false;
+            this.btn_Xoa_NCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_Xoa_NCC.FlatAppearance.BorderSize = 0;
+            this.btn_Xoa_NCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Xoa_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Xoa_NCC.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa_NCC.Location = new System.Drawing.Point(758, 158);
+            this.btn_Xoa_NCC.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Xoa_NCC.Name = "btn_Xoa_NCC";
+            this.btn_Xoa_NCC.Size = new System.Drawing.Size(125, 37);
+            this.btn_Xoa_NCC.TabIndex = 15;
+            this.btn_Xoa_NCC.Text = "Xoá";
+            this.btn_Xoa_NCC.UseVisualStyleBackColor = false;
+            this.btn_Xoa_NCC.Click += new System.EventHandler(this.btn_Xoa_NCC_Click);
             // 
-            // btnADCNLDG
+            // txtMaNCC
             // 
-            this.btnADCNLDG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(100)))));
-            this.btnADCNLDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADCNLDG.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnADCNLDG.ForeColor = System.Drawing.Color.White;
-            this.btnADCNLDG.Location = new System.Drawing.Point(291, 158);
-            this.btnADCNLDG.Margin = new System.Windows.Forms.Padding(4);
-            this.btnADCNLDG.Name = "btnADCNLDG";
-            this.btnADCNLDG.Size = new System.Drawing.Size(121, 37);
-            this.btnADCNLDG.TabIndex = 12;
-            this.btnADCNLDG.Text = "Lưu";
-            this.btnADCNLDG.UseVisualStyleBackColor = false;
+            this.txtMaNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaNCC.Location = new System.Drawing.Point(188, 43);
+            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaNCC.Name = "txtMaNCC";
+            this.txtMaNCC.Size = new System.Drawing.Size(161, 30);
+            this.txtMaNCC.TabIndex = 14;
             // 
-            // txtADSoNM
+            // btn_Sua_NCC
             // 
-            this.txtADSoNM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtADSoNM.Location = new System.Drawing.Point(155, 95);
-            this.txtADSoNM.Margin = new System.Windows.Forms.Padding(4);
-            this.txtADSoNM.Name = "txtADSoNM";
-            this.txtADSoNM.Size = new System.Drawing.Size(220, 30);
-            this.txtADSoNM.TabIndex = 8;
+            this.btn_Sua_NCC.BackColor = System.Drawing.Color.Teal;
+            this.btn_Sua_NCC.FlatAppearance.BorderSize = 0;
+            this.btn_Sua_NCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sua_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Sua_NCC.ForeColor = System.Drawing.Color.White;
+            this.btn_Sua_NCC.Location = new System.Drawing.Point(615, 158);
+            this.btn_Sua_NCC.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Sua_NCC.Name = "btn_Sua_NCC";
+            this.btn_Sua_NCC.Size = new System.Drawing.Size(125, 37);
+            this.btn_Sua_NCC.TabIndex = 13;
+            this.btn_Sua_NCC.Text = "Cập nhật";
+            this.btn_Sua_NCC.UseVisualStyleBackColor = false;
+            this.btn_Sua_NCC.Click += new System.EventHandler(this.btn_Sua_NCC_Click);
             // 
-            // txtADMaLoai
+            // btn_Them_NCC
             // 
-            this.txtADMaLoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtADMaLoai.Location = new System.Drawing.Point(677, 38);
-            this.txtADMaLoai.Margin = new System.Windows.Forms.Padding(4);
-            this.txtADMaLoai.Name = "txtADMaLoai";
-            this.txtADMaLoai.Size = new System.Drawing.Size(220, 30);
-            this.txtADMaLoai.TabIndex = 7;
+            this.btn_Them_NCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(130)))), ((int)(((byte)(100)))));
+            this.btn_Them_NCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Them_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Them_NCC.ForeColor = System.Drawing.Color.White;
+            this.btn_Them_NCC.Location = new System.Drawing.Point(464, 158);
+            this.btn_Them_NCC.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Them_NCC.Name = "btn_Them_NCC";
+            this.btn_Them_NCC.Size = new System.Drawing.Size(121, 37);
+            this.btn_Them_NCC.TabIndex = 12;
+            this.btn_Them_NCC.Text = "Thêm";
+            this.btn_Them_NCC.UseVisualStyleBackColor = false;
+            this.btn_Them_NCC.Click += new System.EventHandler(this.btn_Them_NCC_Click);
+            // 
+            // txtSDT_NCC
+            // 
+            this.txtSDT_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSDT_NCC.Location = new System.Drawing.Point(155, 95);
+            this.txtSDT_NCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT_NCC.Name = "txtSDT_NCC";
+            this.txtSDT_NCC.Size = new System.Drawing.Size(220, 30);
+            this.txtSDT_NCC.TabIndex = 8;
+            // 
+            // txtTenNCC
+            // 
+            this.txtTenNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenNCC.Location = new System.Drawing.Point(677, 38);
+            this.txtTenNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenNCC.Name = "txtTenNCC";
+            this.txtTenNCC.Size = new System.Drawing.Size(220, 30);
+            this.txtTenNCC.TabIndex = 7;
             // 
             // label25
             // 
@@ -307,20 +350,22 @@
             // tbcAdmin_NhanVien
             // 
             this.tbcAdmin_NhanVien.BackColor = System.Drawing.SystemColors.Control;
-            this.tbcAdmin_NhanVien.Controls.Add(this.groupBox1);
-            this.tbcAdmin_NhanVien.Controls.Add(this.button5);
-            this.tbcAdmin_NhanVien.Controls.Add(this.button2);
-            this.tbcAdmin_NhanVien.Controls.Add(this.txtMatKhauNVCapNhat);
-            this.tbcAdmin_NhanVien.Controls.Add(this.txtHoTenNVCapNhat);
-            this.tbcAdmin_NhanVien.Controls.Add(this.txtTenDangNhapNVCapNhat);
-            this.tbcAdmin_NhanVien.Controls.Add(this.txtSearchPhieuMuon);
+            this.tbcAdmin_NhanVien.Controls.Add(this.btn_ViewXML_NV);
+            this.tbcAdmin_NhanVien.Controls.Add(this.btn_Tim_NV);
+            this.tbcAdmin_NhanVien.Controls.Add(this.gbNhanVien);
+            this.tbcAdmin_NhanVien.Controls.Add(this.btnRenewNhanVien);
+            this.tbcAdmin_NhanVien.Controls.Add(this.btnThemNhanVIen);
+            this.tbcAdmin_NhanVien.Controls.Add(this.txtMatKhauNV);
+            this.tbcAdmin_NhanVien.Controls.Add(this.txtHoTenNV);
+            this.tbcAdmin_NhanVien.Controls.Add(this.txtTenDangNhap);
+            this.tbcAdmin_NhanVien.Controls.Add(this.txtMaNhanVien);
             this.tbcAdmin_NhanVien.Controls.Add(this.label21);
             this.tbcAdmin_NhanVien.Controls.Add(this.label20);
             this.tbcAdmin_NhanVien.Controls.Add(this.btnCapNhatNhanVien);
             this.tbcAdmin_NhanVien.Controls.Add(this.label19);
             this.tbcAdmin_NhanVien.Controls.Add(this.label18);
             this.tbcAdmin_NhanVien.Controls.Add(this.label8);
-            this.tbcAdmin_NhanVien.Controls.Add(this.btnXoaNV);
+            this.tbcAdmin_NhanVien.Controls.Add(this.btnXoaNhanVien);
             this.tbcAdmin_NhanVien.Controls.Add(this.dgvNhanVien);
             this.tbcAdmin_NhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbcAdmin_NhanVien.Location = new System.Drawing.Point(4, 32);
@@ -331,107 +376,141 @@
             this.tbcAdmin_NhanVien.TabIndex = 1;
             this.tbcAdmin_NhanVien.Text = "Nhân Viên";
             // 
-            // groupBox1
+            // btn_ViewXML_NV
             // 
-            this.groupBox1.Controls.Add(this.rdThuThuCapNhat);
-            this.groupBox1.Controls.Add(this.rdAdminCapNhat);
-            this.groupBox1.Location = new System.Drawing.Point(182, 124);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(274, 106);
-            this.groupBox1.TabIndex = 61;
-            this.groupBox1.TabStop = false;
+            this.btn_ViewXML_NV.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_ViewXML_NV.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_ViewXML_NV.ForeColor = System.Drawing.Color.White;
+            this.btn_ViewXML_NV.Location = new System.Drawing.Point(775, 169);
+            this.btn_ViewXML_NV.Name = "btn_ViewXML_NV";
+            this.btn_ViewXML_NV.Size = new System.Drawing.Size(167, 37);
+            this.btn_ViewXML_NV.TabIndex = 109;
+            this.btn_ViewXML_NV.Text = "In File Xml";
+            this.btn_ViewXML_NV.UseVisualStyleBackColor = false;
+            this.btn_ViewXML_NV.Click += new System.EventHandler(this.btn_ViewXML_NV_Click);
             // 
-            // rdThuThuCapNhat
+            // btn_Tim_NV
             // 
-            this.rdThuThuCapNhat.AutoSize = true;
-            this.rdThuThuCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdThuThuCapNhat.Location = new System.Drawing.Point(17, 21);
-            this.rdThuThuCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.rdThuThuCapNhat.Name = "rdThuThuCapNhat";
-            this.rdThuThuCapNhat.Size = new System.Drawing.Size(194, 26);
-            this.rdThuThuCapNhat.TabIndex = 55;
-            this.rdThuThuCapNhat.TabStop = true;
-            this.rdThuThuCapNhat.Text = "Nhân viên nhập hàng";
-            this.rdThuThuCapNhat.UseVisualStyleBackColor = true;
+            this.btn_Tim_NV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btn_Tim_NV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Tim_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tim_NV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tim_NV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tim_NV.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim_NV.Image")));
+            this.btn_Tim_NV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Tim_NV.Location = new System.Drawing.Point(20, 240);
+            this.btn_Tim_NV.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Tim_NV.Name = "btn_Tim_NV";
+            this.btn_Tim_NV.Size = new System.Drawing.Size(159, 39);
+            this.btn_Tim_NV.TabIndex = 108;
+            this.btn_Tim_NV.Text = "Tìm theo mã";
+            this.btn_Tim_NV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Tim_NV.UseVisualStyleBackColor = false;
+            this.btn_Tim_NV.Click += new System.EventHandler(this.btn_Tim_NV_Click);
             // 
-            // rdAdminCapNhat
+            // gbNhanVien
             // 
-            this.rdAdminCapNhat.AutoSize = true;
-            this.rdAdminCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rdAdminCapNhat.Location = new System.Drawing.Point(17, 71);
-            this.rdAdminCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.rdAdminCapNhat.Name = "rdAdminCapNhat";
-            this.rdAdminCapNhat.Size = new System.Drawing.Size(84, 26);
-            this.rdAdminCapNhat.TabIndex = 56;
-            this.rdAdminCapNhat.TabStop = true;
-            this.rdAdminCapNhat.Text = "Admin";
-            this.rdAdminCapNhat.UseVisualStyleBackColor = true;
+            this.gbNhanVien.Controls.Add(this.rdNhanVien);
+            this.gbNhanVien.Controls.Add(this.rdAdmin);
+            this.gbNhanVien.Location = new System.Drawing.Point(182, 126);
+            this.gbNhanVien.Name = "gbNhanVien";
+            this.gbNhanVien.Size = new System.Drawing.Size(274, 104);
+            this.gbNhanVien.TabIndex = 61;
+            this.gbNhanVien.TabStop = false;
             // 
-            // button5
+            // rdNhanVien
             // 
-            this.button5.BackColor = System.Drawing.Color.Green;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(39, 240);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(156, 39);
-            this.button5.TabIndex = 60;
-            this.button5.Text = "Làm mới";
-            this.button5.UseVisualStyleBackColor = false;
+            this.rdNhanVien.AutoSize = true;
+            this.rdNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdNhanVien.Location = new System.Drawing.Point(17, 21);
+            this.rdNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.rdNhanVien.Name = "rdNhanVien";
+            this.rdNhanVien.Size = new System.Drawing.Size(194, 26);
+            this.rdNhanVien.TabIndex = 55;
+            this.rdNhanVien.TabStop = true;
+            this.rdNhanVien.Text = "Nhân viên nhập hàng";
+            this.rdNhanVien.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // rdAdmin
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(295, 240);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 39);
-            this.button2.TabIndex = 59;
-            this.button2.Text = "Thêm nhân viên";
-            this.button2.UseVisualStyleBackColor = false;
+            this.rdAdmin.AutoSize = true;
+            this.rdAdmin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rdAdmin.Location = new System.Drawing.Point(17, 71);
+            this.rdAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.rdAdmin.Name = "rdAdmin";
+            this.rdAdmin.Size = new System.Drawing.Size(84, 26);
+            this.rdAdmin.TabIndex = 56;
+            this.rdAdmin.TabStop = true;
+            this.rdAdmin.Text = "Admin";
+            this.rdAdmin.UseVisualStyleBackColor = true;
             // 
-            // txtMatKhauNVCapNhat
+            // btnRenewNhanVien
             // 
-            this.txtMatKhauNVCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMatKhauNVCapNhat.Location = new System.Drawing.Point(671, 92);
-            this.txtMatKhauNVCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMatKhauNVCapNhat.Name = "txtMatKhauNVCapNhat";
-            this.txtMatKhauNVCapNhat.Size = new System.Drawing.Size(271, 30);
-            this.txtMatKhauNVCapNhat.TabIndex = 58;
+            this.btnRenewNhanVien.BackColor = System.Drawing.Color.Green;
+            this.btnRenewNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRenewNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRenewNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRenewNhanVien.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnRenewNhanVien.Location = new System.Drawing.Point(211, 240);
+            this.btnRenewNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRenewNhanVien.Name = "btnRenewNhanVien";
+            this.btnRenewNhanVien.Size = new System.Drawing.Size(156, 39);
+            this.btnRenewNhanVien.TabIndex = 60;
+            this.btnRenewNhanVien.Text = "Làm mới";
+            this.btnRenewNhanVien.UseVisualStyleBackColor = false;
+            this.btnRenewNhanVien.Click += new System.EventHandler(this.btnRenewNhanVien_Click);
             // 
-            // txtHoTenNVCapNhat
+            // btnThemNhanVIen
             // 
-            this.txtHoTenNVCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHoTenNVCapNhat.Location = new System.Drawing.Point(671, 36);
-            this.txtHoTenNVCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHoTenNVCapNhat.Name = "txtHoTenNVCapNhat";
-            this.txtHoTenNVCapNhat.Size = new System.Drawing.Size(271, 30);
-            this.txtHoTenNVCapNhat.TabIndex = 52;
+            this.btnThemNhanVIen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnThemNhanVIen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemNhanVIen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemNhanVIen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNhanVIen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnThemNhanVIen.Location = new System.Drawing.Point(390, 240);
+            this.btnThemNhanVIen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemNhanVIen.Name = "btnThemNhanVIen";
+            this.btnThemNhanVIen.Size = new System.Drawing.Size(193, 39);
+            this.btnThemNhanVIen.TabIndex = 59;
+            this.btnThemNhanVIen.Text = "Thêm nhân viên";
+            this.btnThemNhanVIen.UseVisualStyleBackColor = false;
+            this.btnThemNhanVIen.Click += new System.EventHandler(this.btnThemNhanVIen_Click);
             // 
-            // txtTenDangNhapNVCapNhat
+            // txtMatKhauNV
             // 
-            this.txtTenDangNhapNVCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTenDangNhapNVCapNhat.Location = new System.Drawing.Point(185, 89);
-            this.txtTenDangNhapNVCapNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenDangNhapNVCapNhat.Name = "txtTenDangNhapNVCapNhat";
-            this.txtTenDangNhapNVCapNhat.Size = new System.Drawing.Size(271, 30);
-            this.txtTenDangNhapNVCapNhat.TabIndex = 50;
+            this.txtMatKhauNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMatKhauNV.Location = new System.Drawing.Point(671, 92);
+            this.txtMatKhauNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhauNV.Name = "txtMatKhauNV";
+            this.txtMatKhauNV.Size = new System.Drawing.Size(271, 30);
+            this.txtMatKhauNV.TabIndex = 58;
             // 
-            // txtSearchPhieuMuon
+            // txtHoTenNV
             // 
-            this.txtSearchPhieuMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSearchPhieuMuon.Location = new System.Drawing.Point(185, 33);
-            this.txtSearchPhieuMuon.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchPhieuMuon.Name = "txtSearchPhieuMuon";
-            this.txtSearchPhieuMuon.Size = new System.Drawing.Size(275, 30);
-            this.txtSearchPhieuMuon.TabIndex = 46;
+            this.txtHoTenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHoTenNV.Location = new System.Drawing.Point(671, 36);
+            this.txtHoTenNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoTenNV.Name = "txtHoTenNV";
+            this.txtHoTenNV.Size = new System.Drawing.Size(271, 30);
+            this.txtHoTenNV.TabIndex = 52;
+            // 
+            // txtTenDangNhap
+            // 
+            this.txtTenDangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenDangNhap.Location = new System.Drawing.Point(185, 89);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(271, 30);
+            this.txtTenDangNhap.TabIndex = 50;
+            // 
+            // txtMaNhanVien
+            // 
+            this.txtMaNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaNhanVien.Location = new System.Drawing.Point(185, 33);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.Size = new System.Drawing.Size(275, 30);
+            this.txtMaNhanVien.TabIndex = 46;
             // 
             // label21
             // 
@@ -462,13 +541,14 @@
             this.btnCapNhatNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhatNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhatNhanVien.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCapNhatNhanVien.Location = new System.Drawing.Point(605, 240);
+            this.btnCapNhatNhanVien.Location = new System.Drawing.Point(619, 240);
             this.btnCapNhatNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnCapNhatNhanVien.Name = "btnCapNhatNhanVien";
-            this.btnCapNhatNhanVien.Size = new System.Drawing.Size(99, 39);
+            this.btnCapNhatNhanVien.Size = new System.Drawing.Size(133, 39);
             this.btnCapNhatNhanVien.TabIndex = 53;
-            this.btnCapNhatNhanVien.Text = "Sửa";
+            this.btnCapNhatNhanVien.Text = "Cập nhật";
             this.btnCapNhatNhanVien.UseVisualStyleBackColor = false;
+            this.btnCapNhatNhanVien.Click += new System.EventHandler(this.btnCapNhatNhanVien_Click);
             // 
             // label19
             // 
@@ -503,21 +583,22 @@
             this.label8.TabIndex = 45;
             this.label8.Text = "Mã Nhân Viên : ";
             // 
-            // btnXoaNV
+            // btnXoaNhanVien
             // 
-            this.btnXoaNV.BackColor = System.Drawing.Color.Teal;
-            this.btnXoaNV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaNV.FlatAppearance.BorderSize = 0;
-            this.btnXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNV.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXoaNV.Location = new System.Drawing.Point(775, 240);
-            this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXoaNV.Name = "btnXoaNV";
-            this.btnXoaNV.Size = new System.Drawing.Size(167, 39);
-            this.btnXoaNV.TabIndex = 44;
-            this.btnXoaNV.Text = "Xóa Nhân Viên";
-            this.btnXoaNV.UseVisualStyleBackColor = false;
+            this.btnXoaNhanVien.BackColor = System.Drawing.Color.Teal;
+            this.btnXoaNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnXoaNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaNhanVien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnXoaNhanVien.Location = new System.Drawing.Point(775, 240);
+            this.btnXoaNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoaNhanVien.Name = "btnXoaNhanVien";
+            this.btnXoaNhanVien.Size = new System.Drawing.Size(167, 39);
+            this.btnXoaNhanVien.TabIndex = 44;
+            this.btnXoaNhanVien.Text = "Xóa Nhân Viên";
+            this.btnXoaNhanVien.UseVisualStyleBackColor = false;
+            this.btnXoaNhanVien.Click += new System.EventHandler(this.btnXoaNhanVien_Click);
             // 
             // dgvNhanVien
             // 
@@ -532,13 +613,14 @@
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.Size = new System.Drawing.Size(903, 164);
             this.dgvNhanVien.TabIndex = 3;
+            this.dgvNhanVien.SelectionChanged += new System.EventHandler(this.dgvNhanVien_SelectionChanged);
             // 
             // QuantriAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1062, 648);
+            this.ClientSize = new System.Drawing.Size(1062, 638);
             this.Controls.Add(this.tbcQuanTriAdmin);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnClosed);
@@ -557,8 +639,8 @@
             this.groupBox6.PerformLayout();
             this.tbcAdmin_NhanVien.ResumeLayout(false);
             this.tbcAdmin_NhanVien.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbNhanVien.ResumeLayout(false);
+            this.gbNhanVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
 
@@ -572,34 +654,38 @@
         private System.Windows.Forms.TabPage tbcAdmin_Nhacungcap;
         private System.Windows.Forms.DataGridView dgvLoaiDocGia;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox txtADTDG;
-        private System.Windows.Forms.Button btnADTLDG;
-        private System.Windows.Forms.Button btnADCNLDG;
-        private System.Windows.Forms.TextBox txtADSoNM;
-        private System.Windows.Forms.TextBox txtADMaLoai;
+        private System.Windows.Forms.TextBox txtMaNCC;
+        private System.Windows.Forms.Button btn_Sua_NCC;
+        private System.Windows.Forms.Button btn_Them_NCC;
+        private System.Windows.Forms.TextBox txtSDT_NCC;
+        private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tbcAdmin_NhanVien;
-        private System.Windows.Forms.TextBox txtMatKhauNVCapNhat;
-        private System.Windows.Forms.TextBox txtHoTenNVCapNhat;
-        private System.Windows.Forms.TextBox txtTenDangNhapNVCapNhat;
-        private System.Windows.Forms.TextBox txtSearchPhieuMuon;
+        private System.Windows.Forms.TextBox txtMatKhauNV;
+        private System.Windows.Forms.TextBox txtHoTenNV;
+        private System.Windows.Forms.TextBox txtTenDangNhap;
+        private System.Windows.Forms.TextBox txtMaNhanVien;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.RadioButton rdAdminCapNhat;
-        private System.Windows.Forms.RadioButton rdThuThuCapNhat;
+        private System.Windows.Forms.RadioButton rdAdmin;
+        private System.Windows.Forms.RadioButton rdNhanVien;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnCapNhatNhanVien;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnXoaNV;
+        private System.Windows.Forms.Button btnXoaNhanVien;
         private System.Windows.Forms.DataGridView dgvNhanVien;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Xoa_NCC;
+        private System.Windows.Forms.Button btnThemNhanVIen;
+        private System.Windows.Forms.Button btn_Renew_NCC;
+        private System.Windows.Forms.GroupBox gbNhanVien;
+        private System.Windows.Forms.Button btnRenewNhanVien;
         private System.Windows.Forms.DataGridView dgvNCC;
+        private System.Windows.Forms.Button btn_Tim_NCC;
+        private System.Windows.Forms.Button btn_Tim_NV;
+        private System.Windows.Forms.Button btnXmlViewer_NCC;
+        private System.Windows.Forms.Button btn_ViewXML_NV;
     }
 }

@@ -31,15 +31,17 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbTittle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnClosed = new System.Windows.Forms.Button();
             this.btnQuantri = new System.Windows.Forms.Button();
             this.btnSaoluu = new System.Windows.Forms.Button();
             this.btnDienthoai = new System.Windows.Forms.Button();
             this.btnPhieuNhap = new System.Windows.Forms.Button();
             this.btnDanhmuc = new System.Windows.Forms.Button();
+            this.lbTittle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnClosed = new System.Windows.Forms.Button();
+            this.lblHoTen = new System.Windows.Forms.Label();
+            this.lblQuyen = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +49,8 @@ namespace Quan_Ly_Dien_Thoai.UI
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.lblHoTen);
+            this.groupBox2.Controls.Add(this.lblQuyen);
             this.groupBox2.Controls.Add(this.btnQuantri);
             this.groupBox2.Controls.Add(this.btnSaoluu);
             this.groupBox2.Controls.Add(this.btnDienthoai);
@@ -61,68 +65,6 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.groupBox2.Size = new System.Drawing.Size(1067, 512);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            // 
-            // lbTittle
-            // 
-            this.lbTittle.AutoSize = true;
-            this.lbTittle.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lbTittle.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTittle.ForeColor = System.Drawing.Color.Lime;
-            this.lbTittle.Location = new System.Drawing.Point(276, 35);
-            this.lbTittle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTittle.Name = "lbTittle";
-            this.lbTittle.Size = new System.Drawing.Size(702, 37);
-            this.lbTittle.TabIndex = 52;
-            this.lbTittle.Text = "PHẦN MỀM QUẢN LÝ NHẬP HÀNG ĐIỆN THOẠI";
-            this.lbTittle.Click += new System.EventHandler(this.lbTittle_Click);
-            this.lbTittle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.lbTittle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.lbTittle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Quan_Ly_Dien_Thoai.Properties.Resources.logout;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 78);
-            this.pictureBox1.TabIndex = 54;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(1045, 1);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 41);
-            this.button3.TabIndex = 53;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnClosed
-            // 
-            this.btnClosed.BackColor = System.Drawing.SystemColors.Control;
-            this.btnClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnClosed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClosed.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClosed.FlatAppearance.BorderSize = 0;
-            this.btnClosed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnClosed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnClosed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
-            this.btnClosed.Location = new System.Drawing.Point(1110, 1);
-            this.btnClosed.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
-            this.btnClosed.Name = "btnClosed";
-            this.btnClosed.Size = new System.Drawing.Size(55, 46);
-            this.btnClosed.TabIndex = 38;
-            this.btnClosed.UseVisualStyleBackColor = false;
-            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
             // 
             // btnQuantri
             // 
@@ -224,6 +166,91 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.btnDanhmuc.UseVisualStyleBackColor = false;
             this.btnDanhmuc.Click += new System.EventHandler(this.btnDanhmuc_Click);
             // 
+            // lbTittle
+            // 
+            this.lbTittle.AutoSize = true;
+            this.lbTittle.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lbTittle.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTittle.ForeColor = System.Drawing.Color.Lime;
+            this.lbTittle.Location = new System.Drawing.Point(276, 35);
+            this.lbTittle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTittle.Name = "lbTittle";
+            this.lbTittle.Size = new System.Drawing.Size(702, 37);
+            this.lbTittle.TabIndex = 52;
+            this.lbTittle.Text = "PHẦN MỀM QUẢN LÝ NHẬP HÀNG ĐIỆN THOẠI";
+            this.lbTittle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.lbTittle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.lbTittle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Quan_Ly_Dien_Thoai.Properties.Resources.logout;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 78);
+            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(1045, 1);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(57, 41);
+            this.button3.TabIndex = 53;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnClosed
+            // 
+            this.btnClosed.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnClosed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClosed.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClosed.FlatAppearance.BorderSize = 0;
+            this.btnClosed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClosed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClosed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
+            this.btnClosed.Location = new System.Drawing.Point(1110, 1);
+            this.btnClosed.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
+            this.btnClosed.Name = "btnClosed";
+            this.btnClosed.Size = new System.Drawing.Size(55, 46);
+            this.btnClosed.TabIndex = 38;
+            this.btnClosed.UseVisualStyleBackColor = false;
+            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.BackColor = System.Drawing.Color.Transparent;
+            this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblHoTen.Location = new System.Drawing.Point(747, 55);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(88, 25);
+            this.lblHoTen.TabIndex = 21;
+            this.lblHoTen.Text = "Họ tên: ";
+            // 
+            // lblQuyen
+            // 
+            this.lblQuyen.AutoSize = true;
+            this.lblQuyen.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuyen.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblQuyen.Location = new System.Drawing.Point(747, 85);
+            this.lblQuyen.Name = "lblQuyen";
+            this.lblQuyen.Size = new System.Drawing.Size(105, 25);
+            this.lblQuyen.TabIndex = 22;
+            this.lblQuyen.Text = "Chức vụ: ";
+            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,6 +269,7 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,5 +287,7 @@ namespace Quan_Ly_Dien_Thoai.UI
         private System.Windows.Forms.Button btnSaoluu;
         private System.Windows.Forms.Button btnQuantri;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblHoTen;
+        private System.Windows.Forms.Label lblQuyen;
     }
 }

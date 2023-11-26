@@ -36,17 +36,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnClosed = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.btnXmlPrinter = new System.Windows.Forms.Button();
+            this.btn_Renew = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
+            this.btnXmlViewer = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
+            this.btn_Tim = new System.Windows.Forms.Button();
+            this.btnClosed = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -130,104 +131,74 @@
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             // 
-            // button3
+            // btn_Renew
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(670, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 41);
-            this.button3.TabIndex = 61;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Renew.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btn_Renew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Renew.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Renew.ForeColor = System.Drawing.Color.White;
+            this.btn_Renew.Location = new System.Drawing.Point(608, 227);
+            this.btn_Renew.Name = "btn_Renew";
+            this.btn_Renew.Size = new System.Drawing.Size(169, 35);
+            this.btn_Renew.TabIndex = 104;
+            this.btn_Renew.Text = "Làm mới";
+            this.btn_Renew.UseVisualStyleBackColor = false;
+            this.btn_Renew.Click += new System.EventHandler(this.btn_Renew_Click);
             // 
-            // btnClosed
+            // btn_Xoa
             // 
-            this.btnClosed.BackColor = System.Drawing.SystemColors.Control;
-            this.btnClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnClosed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClosed.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClosed.FlatAppearance.BorderSize = 0;
-            this.btnClosed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.btnClosed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnClosed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
-            this.btnClosed.Location = new System.Drawing.Point(742, 2);
-            this.btnClosed.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
-            this.btnClosed.Name = "btnClosed";
-            this.btnClosed.Size = new System.Drawing.Size(49, 43);
-            this.btnClosed.TabIndex = 60;
-            this.btnClosed.UseVisualStyleBackColor = false;
-            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
+            this.btn_Xoa.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Xoa.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa.Location = new System.Drawing.Point(608, 439);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(169, 35);
+            this.btn_Xoa.TabIndex = 103;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
-            // button1
+            // btn_Sua
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(625, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 35);
-            this.button1.TabIndex = 104;
-            this.button1.Text = "Làm mới";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Sua.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sua.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Sua.ForeColor = System.Drawing.Color.White;
+            this.btn_Sua.Location = new System.Drawing.Point(608, 366);
+            this.btn_Sua.Name = "btn_Sua";
+            this.btn_Sua.Size = new System.Drawing.Size(169, 35);
+            this.btn_Sua.TabIndex = 102;
+            this.btn_Sua.Text = "Cập nhật";
+            this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // button10
+            // btn_Them
             // 
-            this.button10.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(621, 403);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(143, 35);
-            this.button10.TabIndex = 103;
-            this.button10.Text = "Xóa";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btn_Them.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btn_Them.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Them.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Them.ForeColor = System.Drawing.Color.White;
+            this.btn_Them.Location = new System.Drawing.Point(608, 293);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(169, 35);
+            this.btn_Them.TabIndex = 101;
+            this.btn_Them.Text = "Thêm";
+            this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
-            // button11
+            // btnXmlViewer
             // 
-            this.button11.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(625, 322);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(139, 35);
-            this.button11.TabIndex = 102;
-            this.button11.Text = "Cập nhật";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(625, 249);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(139, 35);
-            this.button12.TabIndex = 101;
-            this.button12.Text = "Lưu";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // btnXmlPrinter
-            // 
-            this.btnXmlPrinter.BackColor = System.Drawing.Color.DarkGray;
-            this.btnXmlPrinter.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXmlPrinter.ForeColor = System.Drawing.Color.White;
-            this.btnXmlPrinter.Location = new System.Drawing.Point(625, 500);
-            this.btnXmlPrinter.Name = "btnXmlPrinter";
-            this.btnXmlPrinter.Size = new System.Drawing.Size(143, 37);
-            this.btnXmlPrinter.TabIndex = 100;
-            this.btnXmlPrinter.Text = "Xem File Xml";
-            this.btnXmlPrinter.UseVisualStyleBackColor = false;
+            this.btnXmlViewer.BackColor = System.Drawing.Color.DarkGray;
+            this.btnXmlViewer.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXmlViewer.ForeColor = System.Drawing.Color.White;
+            this.btnXmlViewer.Location = new System.Drawing.Point(604, 539);
+            this.btnXmlViewer.Name = "btnXmlViewer";
+            this.btnXmlViewer.Size = new System.Drawing.Size(173, 37);
+            this.btnXmlViewer.TabIndex = 100;
+            this.btnXmlViewer.Text = "Xem File Xml";
+            this.btnXmlViewer.UseVisualStyleBackColor = false;
+            this.btnXmlViewer.Click += new System.EventHandler(this.btnXmlViewer_Click);
             // 
             // button17
             // 
@@ -265,21 +236,76 @@
             this.button20.Text = ">";
             this.button20.UseVisualStyleBackColor = true;
             // 
+            // btn_Tim
+            // 
+            this.btn_Tim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.btn_Tim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Tim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Tim.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tim.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Tim.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tim.Image")));
+            this.btn_Tim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Tim.Location = new System.Drawing.Point(608, 168);
+            this.btn_Tim.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Tim.Name = "btn_Tim";
+            this.btn_Tim.Size = new System.Drawing.Size(169, 35);
+            this.btn_Tim.TabIndex = 105;
+            this.btn_Tim.Text = "Tìm theo mã";
+            this.btn_Tim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Tim.UseVisualStyleBackColor = false;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
+            // 
+            // btnClosed
+            // 
+            this.btnClosed.BackColor = System.Drawing.SystemColors.Control;
+            this.btnClosed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnClosed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClosed.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClosed.FlatAppearance.BorderSize = 0;
+            this.btnClosed.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.btnClosed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClosed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
+            this.btnClosed.Location = new System.Drawing.Point(742, 2);
+            this.btnClosed.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
+            this.btnClosed.Name = "btnClosed";
+            this.btnClosed.Size = new System.Drawing.Size(49, 43);
+            this.btnClosed.TabIndex = 60;
+            this.btnClosed.UseVisualStyleBackColor = false;
+            this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(670, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(57, 41);
+            this.button3.TabIndex = 61;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Quanly_DanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(790, 549);
+            this.ClientSize = new System.Drawing.Size(790, 588);
+            this.Controls.Add(this.btn_Tim);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button18);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Renew);
             this.Controls.Add(this.button19);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.button20);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.btnXmlPrinter);
+            this.Controls.Add(this.btn_Sua);
+            this.Controls.Add(this.btn_Them);
+            this.Controls.Add(this.btnXmlViewer);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnClosed);
             this.Controls.Add(this.label1);
@@ -307,16 +333,17 @@
         private System.Windows.Forms.TextBox txtTenDanhMuc;
         private System.Windows.Forms.TextBox txtMaDanhMuc;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnClosed;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button btnXmlPrinter;
+        private System.Windows.Forms.Button btn_Renew;
+        private System.Windows.Forms.Button btn_Xoa;
+        private System.Windows.Forms.Button btn_Sua;
+        private System.Windows.Forms.Button btn_Them;
+        private System.Windows.Forms.Button btnXmlViewer;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btn_Tim;
+        private System.Windows.Forms.Button btnClosed;
+        private System.Windows.Forms.Button button3;
     }
 }

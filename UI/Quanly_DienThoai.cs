@@ -8,11 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Quan_Ly_Dien_Thoai.Controller;
 
 namespace Quan_Ly_Dien_Thoai.UI
 {
     public partial class Quanly_DienThoai : Form
     {
+        XulyXML xuly = new XulyXML();
+        DienThoai dt = new DienThoai();
+        Danhmuc danhmuc = new Danhmuc();
+        string[] colnames_elements = { "MADT", "TENDT", "SOLUONGHIENCON", "MaDM" };
         public Quanly_DienThoai()
         {
             InitializeComponent();
@@ -46,93 +51,18 @@ namespace Quan_Ly_Dien_Thoai.UI
         }
         private void Quanly_SanPham_Load(object sender, EventArgs e)
         {
-            Xulydulieu xuly = new Xulydulieu();
-            String sql = "select * from DIENTHOAI";
-            this.dgvSanPham.DataSource = xuly.getTable(sql);
+            cbDanhMuc.DataSource = danhmuc.LoadDanhMuc();
+            cbDanhMuc.ValueMember = "MaDM";
+            cbDanhMuc.DisplayMember = "CombinedColumn";
+            
+            Hienthi();
         }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void Hienthi()
         {
-            Xulydulieu xuly = new Xulydulieu();
-            String sql = "SELECT * FROM DIENTHOAI";
-            List<string> conditions = new List<string>();
-
-            String maDT = txtMaDienThoai.Text.Trim();
-            String tenDT = txtTenDienThoai.Text.Trim();
-            String soLuong = txtSoLuong.Text.Trim();
-            String maDM = cbDanhMuc.Text.Trim();
-
-
-            if (!String.IsNullOrEmpty(maDT))
-            {
-                conditions.Add("MADT = '" + maDT + "'");
-            }
-            if (!String.IsNullOrEmpty(tenDT))
-            {
-                conditions.Add("TENDT = '" + tenDT + "'");
-            }
-            if (!String.IsNullOrEmpty(soLuong))
-            {
-                conditions.Add("SOLUONGHIENCON = '" + soLuong + "'");
-            }
-            if (!String.IsNullOrEmpty(maDM))
-            {
-                conditions.Add("MaDM = '" + maDM + "'");
-            }
-
-            if (conditions.Count > 0)
-            {
-                sql += " WHERE " + string.Join(" AND ", conditions);
-            }
-
-            this.dgvSanPham.DataSource = xuly.getTable(sql);
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            Xulydulieu xuly = new Xulydulieu();
-            String maDT = txtMaDienThoai.Text.Trim();
-            String tenDT = txtTenDienThoai.Text.Trim();
-            String soLuong = txtSoLuong.Text.Trim();
-            String maDM = cbDanhMuc.Text.Trim();
-
-            String sql = "Insert into [DIENTHOAI] ([MADT], [TENDT], [SOLUONGHIENCON], [MaDM]) " +
-                "Values ( " + maDT + " , "+ tenDT +" , "+ soLuong + " , "+ maDM +" )";
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            Xulydulieu xuly = new Xulydulieu();
-            String maDT = txtMaDienThoai.Text.Trim();
-            String tenDT = txtTenDienThoai.Text.Trim();
-            String soLuong = txtSoLuong.Text.Trim();
-            String maDM = cbDanhMuc.Text.Trim();
-
-            String sql = "Update [DIENTHOAI] " +
-                "SET [MADT] = '" + maDT + "', [TENDT] = '" + tenDT + "' " +
-                " [SOLUONGHIENCON] = '" + soLuong + "', [MaDM] = '" + maDM + "' " +
-                "WHERE  [MaDM] = '" + maDM + "'";
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            Xulydulieu xuly = new Xulydulieu();
-            String maDT = txtMaDienThoai.Text.Trim();
-
-
-            String sql = "DELETE [DIENTHOAI] " +
-                "WHERE  [MaDT] = '" + maDT + "'";
-        }
-
-        private void btnXmlPrinter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnViewWeb_Click(object sender, EventArgs e)
-        {
-
+            DataTable dt = new DataTable();
+            dt = xuly.getXMLData("DIENTHOAI.xml");
+            dgvSanPham.DataSource = dt;
+            //dgvSanPham.Columns["CombinedColumn"].Visible = false;
         }
 
         private void btnClosed_Click(object sender, EventArgs e)
@@ -150,12 +80,58 @@ namespace Quan_Ly_Dien_Thoai.UI
             dgvRowSelected();
         }
 
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            if (dt.checkMaDT(txtMaDienThoai.Text) == true)
+                MessageBox.Show("Mã điện thoại tồn tại");
+            else
+            {
+                dt.AddDT(txtMaDienThoai.Text, txtTenDienThoai.Text, txtSoLuong.Text, cbDanhMuc.SelectedValue.ToString());
+                MessageBox.Show("Đã thêm");
+                Hienthi();
+            }
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            dt.EditDT(txtMaDienThoai.Text, txtTenDienThoai.Text, txtSoLuong.Text, cbDanhMuc.SelectedValue.ToString());
+            MessageBox.Show("Đã sửa");
+            Hienthi();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            dt.DeleteDT(txtMaDienThoai.Text);
+            MessageBox.Show("Đã xóa");
+            Hienthi();
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            
+            xuly.SearchAndDisplayData("DIENTHOAI.xml", txtMaDienThoai, colnames_elements, dgvSanPham);
+        }
+
+        private void btn_Renew_Click(object sender, EventArgs e)
+        {
+            Hienthi();
+        }
+
+        private void btnXmlViewer_Click(object sender, EventArgs e)
+        {
+            xuly.GenerateHTMLFromXML("DIENTHOAI.xml", "DIENTHOAI", colnames_elements, "DIENTHOAI.html", "Điện Thoại");
+        }
+
         private void dgvRowSelected()
         {
-            int d = dgvSanPham.CurrentRow.Index;
-            txtMaDienThoai.Text = dgvSanPham.Rows[d].Cells[0].Value.ToString();
-            txtTenDienThoai.Text = dgvSanPham.Rows[d].Cells[1].Value.ToString();
-            txtSoLuong.Text = dgvSanPham.Rows[d].Cells[2].Value.ToString();
+            if (dgvSanPham.CurrentRow != null && dgvSanPham.CurrentRow.Index >= 0)
+            {
+                int d = dgvSanPham.CurrentRow.Index;
+                txtMaDienThoai.Text = dgvSanPham.Rows[d].Cells[0].Value?.ToString() ?? "";
+                txtTenDienThoai.Text = dgvSanPham.Rows[d].Cells[1].Value?.ToString() ?? "";
+                txtSoLuong.Text = dgvSanPham.Rows[d].Cells[2].Value?.ToString() ?? "";
+                cbDanhMuc.SelectedValue = dgvSanPham.Rows[d].Cells[3].Value?.ToString() ?? "";
+            }
         }
     }
 }

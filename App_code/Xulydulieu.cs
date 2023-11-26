@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Quan_Ly_Dien_Thoai.App_code
 {
@@ -110,40 +111,47 @@ namespace Quan_Ly_Dien_Thoai.App_code
             this.MoKetNoi();
             foreach (string TableName in TableNames)
             {
-                SqlCommand cmd = new SqlCommand($"SELECT * FROM {TableName}", con);
-                SqlDataReader reader = cmd.ExecuteReader();
+                string sql = "Select * from " + TableName;
+                SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable(TableName);
+                ad.Fill(dt);
+                dt.WriteXml(Application.StartupPath + "\\" + TableName + ".xml", XmlWriteMode.WriteSchema);
 
-                if (reader.HasRows)
-                {
-                    XmlWriterSettings xmlSettings = new XmlWriterSettings
-                    {
-                        Indent = true
-                    };
-                    XmlWriter xmlWriter = XmlWriter.Create($"{TableName}.xml", xmlSettings);
+                //SqlCommand cmd = new SqlCommand($"SELECT * FROM {TableName}", con);
+                //SqlDataReader reader = cmd.ExecuteReader();
 
-                    xmlWriter.WriteStartDocument();
-                    xmlWriter.WriteStartElement(TableName);
+                //if (reader.HasRows)
+                //{
+                //    XmlWriterSettings xmlSettings = new XmlWriterSettings
+                //    {
+                //        Indent = true
 
-                    while (reader.Read())
-                    {
-                        xmlWriter.WriteStartElement("Row");
+                //    };
+                //    XmlWriter xmlWriter = XmlWriter.Create($"{TableName}.xml", xmlSettings);
 
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            xmlWriter.WriteStartElement(reader.GetName(i));
-                            xmlWriter.WriteValue(reader[i].ToString());
-                            xmlWriter.WriteEndElement();
-                        }
+                //    xmlWriter.WriteStartDocument(true);
+                //    xmlWriter.WriteStartElement(TableName + "S");
 
-                        xmlWriter.WriteEndElement();
-                    }
+                //    while (reader.Read())
+                //    {
+                //        xmlWriter.WriteStartElement(TableName);
 
-                    xmlWriter.WriteEndElement();
-                    xmlWriter.WriteEndDocument();
-                    xmlWriter.Close();
-                }
-                reader.Close();
-                cmd.Dispose();
+                //        for (int i = 0; i < reader.FieldCount; i++)
+                //        {
+                //            xmlWriter.WriteStartElement(reader.GetName(i));
+                //            xmlWriter.WriteValue(reader[i].ToString());
+                //            xmlWriter.WriteEndElement();
+                //        }
+
+                //        xmlWriter.WriteEndElement();
+                //    }
+
+                //    xmlWriter.WriteEndElement();
+                //    xmlWriter.WriteEndDocument();
+                //    xmlWriter.Close();
+                //}
+                //reader.Close();
+                //cmd.Dispose();
             }
             this.DongKetNoi();
         }

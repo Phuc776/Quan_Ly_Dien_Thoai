@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quan_Ly_Dien_Thoai.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Quan_Ly_Dien_Thoai.UI
 {
     public partial class QuanLy : Form
     {
+        public static string tenDN = "";
+        public static string quyen = "";
         public QuanLy()
         {
             InitializeComponent();
@@ -43,10 +46,6 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             drag = false;
         }
-        private void btnQuanTriAdmin_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnClosed_Click(object sender, EventArgs e)
         {
@@ -61,18 +60,18 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bạn muốn đăng xuất tài khoản?");
+            DialogResult result = MessageBox.Show("Bạn muốn đăng xuất tài khoản?", "Đăng Xuất", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+            
         }
 
         private void btnQuantri_Click(object sender, EventArgs e)
         {
             QuantriAdmin frmquantri = new QuantriAdmin();
             frmquantri.Show();
-        }
-
-        private void lbTittle_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnDienthoai_Click(object sender, EventArgs e)
@@ -101,7 +100,26 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void QuanLy_Load(object sender, EventArgs e)
         {
+            ktQuyenDangNhap();
+        }
 
+        public void ktQuyenDangNhap()
+        {
+            if (quyen.Equals("0"))
+            {
+                lblQuyen.Text += "Quản Trị Viên";
+            }
+            else
+            {
+                lblQuyen.Text += "Nhân Viên";
+                btnQuantri.Visible = false;
+            }
+            ThongTinDangNhap();
+        }
+
+        private void ThongTinDangNhap()
+        {
+            lblHoTen.Text += tenDN;
         }
     }
 }
