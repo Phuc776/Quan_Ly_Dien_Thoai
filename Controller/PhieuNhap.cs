@@ -109,52 +109,5 @@ namespace Quan_Ly_Dien_Thoai.Controller
             }
             return true;
         }
-
-        public void UpdateTongTienNhap()
-        {
-            try
-            {
-                string phieuNhapFilePath = "PHIEUNHAP.xml";
-                string chiTietPhieuNhapFilePath = "CHITIETPHIEUNHAP.xml";
-
-                XDocument phieuNhapDoc = XDocument.Load(phieuNhapFilePath);
-                XDocument chiTietPhieuNhapDoc = XDocument.Load(chiTietPhieuNhapFilePath);
-
-                var phieuNhapElements = phieuNhapDoc.Descendants("PHIEUNHAP");
-                var chiTietPhieuNhapElements = chiTietPhieuNhapDoc.Descendants("CHITIETPHIEUNHAP");
-
-                foreach (var phieuNhap in phieuNhapElements)
-                {
-                    int mapn = int.Parse(phieuNhap.Element("MAPN")?.Value ?? "0");
-
-                    decimal tongTienNhap = 0;
-
-                    // Find corresponding CHITIETPHIEUNHAP elements for the current MAPN
-                    var matchingChiTietPhieuNhap = chiTietPhieuNhapElements
-                        .Where(ct => int.Parse(ct.Element("MAPN")?.Value ?? "0") == mapn);
-
-                    foreach (var chiTietPhieuNhap in matchingChiTietPhieuNhap)
-                    {
-                        int soluongNhap = int.Parse(chiTietPhieuNhap.Element("SOLUONGNHAP")?.Value ?? "0");
-                        decimal gianhap = decimal.Parse(chiTietPhieuNhap.Element("GIANHAP")?.Value ?? "0");
-
-                        // Calculate TongTienNhap for the current PHIEUNHAP
-                        tongTienNhap += soluongNhap * gianhap;
-                    }
-
-                    // Update the TongTienNhap in PHIEUNHAP.xml
-                    phieuNhap.Element("TongTienNhap").Value = tongTienNhap.ToString("F2");
-                }
-
-                phieuNhapDoc.Save(phieuNhapFilePath);
-
-                MessageBox.Show("TongTienNhap updated successfully!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error updating TongTienNhap: {ex.Message}");
-            }
-        }
-
     }
 }

@@ -19,7 +19,20 @@ namespace Quan_Ly_Dien_Thoai.UI
         NCC NCC = new NCC();
         String[] colnames_elements_NCC = { "MANCC", "TENNCC", "SDT" };
         String[] colnames_elements_NV = { "maNV", "tenNV", "username", "password", "loainv" };
-
+        Dictionary<string, string> columnTitleMap_NCC = new Dictionary<string, string>
+        {
+            { "MANCC", "ID" },
+            { "TENNCC", "Name" },
+            { "SDT", "Phone Number" }
+        };
+        Dictionary<string, string> columnTitleMap_NV = new Dictionary<string, string>
+        {
+            { "maNV", "ID" },
+            { "tenNV", "Name" },
+            { "username", "Username" },
+            { "password", "PassWord" },
+            { "loainv", "Loại nhân viên" }
+        };
         public QuantriAdmin()
         {
             InitializeComponent();
@@ -55,6 +68,7 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvNCC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             HienThiNCC();
             HienThiNhanVien();
         }
@@ -73,6 +87,14 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             DataTable dt = new DataTable();
             dt = xuly.getXMLData("NHANVIEN.xml");
+            foreach (DataColumn column in dt.Columns)
+            {
+                string columnName = column.ColumnName;
+                if (columnTitleMap_NV.ContainsKey(columnName))
+                {
+                    column.ColumnName = columnTitleMap_NV[columnName];
+                }
+            }
             this.dgvNhanVien.DataSource = dt;
         }
 
@@ -80,6 +102,14 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             DataTable dt = new DataTable();
             dt = xuly.getXMLData("NHACUNGCAP.xml");
+            foreach (DataColumn column in dt.Columns)
+            {
+                string columnName = column.ColumnName;
+                if (columnTitleMap_NCC.ContainsKey(columnName))
+                {
+                    column.ColumnName = columnTitleMap_NCC[columnName];
+                }
+            }
             this.dgvNCC.DataSource = dt;
         }
 
@@ -201,12 +231,12 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void btn_Tim_NCC_Click(object sender, EventArgs e)
         {
-            xuly.SearchAndDisplayData("NHACUNGCAP.xml", txtMaNCC, colnames_elements_NCC, dgvNCC);
+            xuly.SearchAndDisplayData("NHACUNGCAP.xml", txtMaNCC, colnames_elements_NCC, dgvNCC, columnTitleMap_NCC);
         }
 
         private void btn_Tim_NV_Click(object sender, EventArgs e)
         {
-            xuly.SearchAndDisplayData("NHANVIEN.xml", txtMaNhanVien, colnames_elements_NV, dgvNhanVien);
+            xuly.SearchAndDisplayData("NHANVIEN.xml", txtMaNhanVien, colnames_elements_NV, dgvNhanVien, columnTitleMap_NV);
         }
 
         private void btn_ViewXML_NV_Click(object sender, EventArgs e)

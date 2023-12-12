@@ -76,10 +76,10 @@ namespace Quan_Ly_Dien_Thoai.UI
             XDocument doc = XDocument.Load("CHITIETPHIEUNHAP.xml");
 
             DataTable table = new DataTable();
-            table.Columns.Add("MAPN", typeof(int));
-            table.Columns.Add("MADT", typeof(int));
-            table.Columns.Add("SOLUONGNHAP", typeof(int));
-            table.Columns.Add("GIANHAP", typeof(decimal));
+            table.Columns.Add("Mã phiếu nhập", typeof(int));
+            table.Columns.Add("Mã điện thoại", typeof(int));
+            table.Columns.Add("Số lượng nhập", typeof(int));
+            table.Columns.Add("Giá nhập", typeof(decimal));
 
             foreach (XElement element in doc.Descendants("CHITIETPHIEUNHAP"))
             {
@@ -97,12 +97,11 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             XDocument doc = XDocument.Load("CHITIETPHIEUNHAP.xml");
             
-
             DataTable table = new DataTable();
-            table.Columns.Add("MAPN", typeof(int));
-            table.Columns.Add("MADT", typeof(int));
-            table.Columns.Add("SOLUONGNHAP", typeof(int));
-            table.Columns.Add("GIANHAP", typeof(decimal));
+            table.Columns.Add("Mã phiếu nhập", typeof(int));
+            table.Columns.Add("Mã điện thoại", typeof(int));
+            table.Columns.Add("Số lượng nhập", typeof(int));
+            table.Columns.Add("Giá nhập", typeof(decimal));
 
             bool applyFilter = !string.IsNullOrWhiteSpace(txtMaPN.Text);
             int filterMaPN = applyFilter ? int.Parse(txtMaPN.Text) : 0;

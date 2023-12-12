@@ -31,6 +31,8 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLy));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblHoTen = new System.Windows.Forms.Label();
+            this.lblQuyen = new System.Windows.Forms.Label();
             this.btnQuantri = new System.Windows.Forms.Button();
             this.btnSaoluu = new System.Windows.Forms.Button();
             this.btnDienthoai = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnClosed = new System.Windows.Forms.Button();
-            this.lblHoTen = new System.Windows.Forms.Label();
-            this.lblQuyen = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,9 +62,33 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1067, 512);
+            this.groupBox2.Size = new System.Drawing.Size(1099, 512);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.BackColor = System.Drawing.Color.Transparent;
+            this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblHoTen.Location = new System.Drawing.Point(689, 56);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(88, 25);
+            this.lblHoTen.TabIndex = 21;
+            this.lblHoTen.Text = "Họ tên: ";
+            // 
+            // lblQuyen
+            // 
+            this.lblQuyen.AutoSize = true;
+            this.lblQuyen.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuyen.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblQuyen.Location = new System.Drawing.Point(689, 86);
+            this.lblQuyen.Name = "lblQuyen";
+            this.lblQuyen.Size = new System.Drawing.Size(105, 25);
+            this.lblQuyen.TabIndex = 22;
+            this.lblQuyen.Text = "Chức vụ: ";
             // 
             // btnQuantri
             // 
@@ -76,7 +100,7 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.btnQuantri.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnQuantri.Image = ((System.Drawing.Image)(resources.GetObject("btnQuantri.Image")));
             this.btnQuantri.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnQuantri.Location = new System.Drawing.Point(752, 364);
+            this.btnQuantri.Location = new System.Drawing.Point(694, 364);
             this.btnQuantri.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuantri.Name = "btnQuantri";
             this.btnQuantri.Size = new System.Drawing.Size(300, 106);
@@ -200,7 +224,7 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(1045, 1);
+            this.button3.Location = new System.Drawing.Point(1122, -5);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(57, 41);
@@ -219,7 +243,7 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.btnClosed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnClosed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClosed.Image = ((System.Drawing.Image)(resources.GetObject("btnClosed.Image")));
-            this.btnClosed.Location = new System.Drawing.Point(1110, 1);
+            this.btnClosed.Location = new System.Drawing.Point(1187, -5);
             this.btnClosed.Margin = new System.Windows.Forms.Padding(4, 4, 13, 4);
             this.btnClosed.Name = "btnClosed";
             this.btnClosed.Size = new System.Drawing.Size(55, 46);
@@ -227,35 +251,11 @@ namespace Quan_Ly_Dien_Thoai.UI
             this.btnClosed.UseVisualStyleBackColor = false;
             this.btnClosed.Click += new System.EventHandler(this.btnClosed_Click);
             // 
-            // lblHoTen
-            // 
-            this.lblHoTen.AutoSize = true;
-            this.lblHoTen.BackColor = System.Drawing.Color.Transparent;
-            this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTen.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblHoTen.Location = new System.Drawing.Point(747, 55);
-            this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(88, 25);
-            this.lblHoTen.TabIndex = 21;
-            this.lblHoTen.Text = "Họ tên: ";
-            // 
-            // lblQuyen
-            // 
-            this.lblQuyen.AutoSize = true;
-            this.lblQuyen.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuyen.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblQuyen.Location = new System.Drawing.Point(747, 85);
-            this.lblQuyen.Name = "lblQuyen";
-            this.lblQuyen.Size = new System.Drawing.Size(105, 25);
-            this.lblQuyen.TabIndex = 22;
-            this.lblQuyen.Text = "Chức vụ: ";
-            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 685);
+            this.ClientSize = new System.Drawing.Size(1240, 685);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbTittle);

@@ -18,6 +18,13 @@ namespace Quan_Ly_Dien_Thoai.UI
         DienThoai dt = new DienThoai();
         Danhmuc danhmuc = new Danhmuc();
         string[] colnames_elements = { "MADT", "TENDT", "SOLUONGHIENCON", "MaDM" };
+        Dictionary<string, string> columnTitleMap = new Dictionary<string, string>
+        {
+            { "MADT", "ID" },
+            { "TENDT", "Name" },
+            { "SOLUONGHIENCON", "Quantity" },
+            { "MaDM", "CategoryID" }
+        };
         public Quanly_DienThoai()
         {
             InitializeComponent();
@@ -54,13 +61,21 @@ namespace Quan_Ly_Dien_Thoai.UI
             cbDanhMuc.DataSource = danhmuc.LoadDanhMuc();
             cbDanhMuc.ValueMember = "MaDM";
             cbDanhMuc.DisplayMember = "CombinedColumn";
-            
+            dgvSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Hienthi();
         }
         private void Hienthi()
         {
             DataTable dt = new DataTable();
             dt = xuly.getXMLData("DIENTHOAI.xml");
+            foreach (DataColumn column in dt.Columns)
+            {
+                string columnName = column.ColumnName;
+                if (columnTitleMap.ContainsKey(columnName))
+                {
+                    column.ColumnName = columnTitleMap[columnName];
+                }
+            }
             dgvSanPham.DataSource = dt;
             //dgvSanPham.Columns["CombinedColumn"].Visible = false;
         }
@@ -108,8 +123,7 @@ namespace Quan_Ly_Dien_Thoai.UI
 
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            
-            xuly.SearchAndDisplayData("DIENTHOAI.xml", txtMaDienThoai, colnames_elements, dgvSanPham);
+            xuly.SearchAndDisplayData("DIENTHOAI.xml", txtMaDienThoai, colnames_elements, dgvSanPham, columnTitleMap);
         }
 
         private void btn_Renew_Click(object sender, EventArgs e)

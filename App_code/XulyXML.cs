@@ -73,7 +73,7 @@ namespace Quan_Ly_Dien_Thoai.App_code
             doc.Save(duongDan);
         }
 
-        public void SearchAndDisplayData(string fileName, TextBox searchBox, string[] columnNames, DataGridView dataGridView)
+        public void SearchAndDisplayData(string fileName, TextBox searchBox, string[] columnNames, DataGridView dataGridView, Dictionary<string, string> columnTitleMap)
         {
             string searchText = string.IsNullOrWhiteSpace(searchBox.Text) ? "0" : searchBox.Text.Trim();
             XmlTextReader reader = new XmlTextReader(fileName);
@@ -82,6 +82,7 @@ namespace Quan_Ly_Dien_Thoai.App_code
             DataView dv = new DataView(ds.Tables[0]);
             if (columnNames.Length > 0)
                 dv.Sort = columnNames[0];
+
             reader.Close();
             int index = dv.Find(searchText.Trim());
             if (index == -1)
@@ -94,7 +95,8 @@ namespace Quan_Ly_Dien_Thoai.App_code
                 DataTable dt = new DataTable();
                 foreach (string columnName in columnNames)
                 {
-                    dt.Columns.Add(columnName);
+                    string displayTitle = columnTitleMap.ContainsKey(columnName) ? columnTitleMap[columnName] : columnName;
+                    dt.Columns.Add(displayTitle);
                 }
                 object[] list = new object[columnNames.Length];
                 for (int i = 0; i < columnNames.Length; i++)

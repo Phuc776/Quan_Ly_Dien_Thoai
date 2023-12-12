@@ -18,6 +18,11 @@ namespace Quan_Ly_Dien_Thoai.UI
         XulyXML xuly = new XulyXML();
         Danhmuc danhmuc = new Danhmuc();
         string[] colnames_elements = { "MaDM", "TenDM" };
+        Dictionary<string, string> columnTitleMap = new Dictionary<string, string>
+        {
+            { "MaDM", "ID" },
+            { "TenDM", "Name" }
+        };
         public Quanly_DanhMuc()
         {
             InitializeComponent();
@@ -59,6 +64,14 @@ namespace Quan_Ly_Dien_Thoai.UI
         {
             DataTable dt = new DataTable();
             dt = xuly.getXMLData("DANHMUC.xml");
+            foreach (DataColumn column in dt.Columns)
+            {
+                string columnName = column.ColumnName;
+                if (columnTitleMap.ContainsKey(columnName))
+                {
+                    column.ColumnName = columnTitleMap[columnName];
+                }
+            }
             this.dgvDanhMuc.DataSource = dt;
         }
 
@@ -115,7 +128,7 @@ namespace Quan_Ly_Dien_Thoai.UI
         private void btn_Tim_Click(object sender, EventArgs e)
         {
             
-            xuly.SearchAndDisplayData("DANHMUC.xml", txtMaDanhMuc, colnames_elements, dgvDanhMuc);
+            xuly.SearchAndDisplayData("DANHMUC.xml", txtMaDanhMuc, colnames_elements, dgvDanhMuc, columnTitleMap);
         }
 
         private void btn_Renew_Click(object sender, EventArgs e)
